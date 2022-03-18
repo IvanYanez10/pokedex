@@ -8,6 +8,13 @@
   </head>
   <body>
     <h1>Pokedex</h1>
+    <div>
+      <form action="{% url 'pokedexApp:index'%}" method="post">
+        {% csrf_token %}
+        {{pkc}}
+        <input type="submit">
+      </form>
+    </div>
     <ul>
       <li><span>{{ namePokemon }}</span></li>
       <li><span>{{ idPokemon }}</span></li>
