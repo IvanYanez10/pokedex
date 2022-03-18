@@ -14,8 +14,8 @@ def index(request):
         if pkFormUser.is_valid():
             pkFormUserCleaned = pkFormUser.cleaned_data['pokechosen']
             pkFormUserCleaned.lower()
-        if pkFormUserCleaned == 'ditto':
-            pkimg = ditto
+            if pkFormUserCleaned == 'ditto':
+                pkimg = ditto
 
         else:
             return render(request, 'pokedexApp/index.html', {"pkc": pokechosencl(), "pkimg": pkimg}) 
