@@ -7,8 +7,24 @@
     <link rel="stylesheet" href="{% static 'pokedexApp/style.css'%}">
   </head>
   <body>
-    <span>PokedexApp</span>
-    <h1>Ditto</h1>
-    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/132.png" title="Foto de Ditto" alt="No se pudo cargar imagen"/>
+    <h1>Pokedex</h1>
+    <ul>
+      <li><span>{{ namePokemon }}</span></li>
+      <li><span>{{ idPokemon }}</span></li>
+      <li><span> {{ typesPokemon }} </span></li>
+      <li>
+        <span>Estadisticas</span>
+        <ul>
+          {% for i in statsPokemon %}
+          <li><span>{{ i }}</span></li>
+          {% endfor %}
+        </ul>
+      </li>
+      
+      <li><span> {{ heightPokemon }} m </span></li>
+      <li><span> {{ weightPokemon }} kg </span></li>
+      <li><img src="{{imageUrlPokemon}}" title="Foto de {{ namePokemon }}" alt="No se pudo cargar imagen" height="250"/></li>
+    </ul>
+    
   </body>
 </html>
