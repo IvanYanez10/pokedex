@@ -36,7 +36,7 @@ def index(request):
     statsPokemon = []
 
     for i in dataJson["types"]:
-        typesPokemon.append(i["type"]["name"])
+        typesPokemon.append([i["type"]["name"]])
     
     for i in dataJson["stats"]:
         statsPokemon.append([i["stat"]["name"], i["base_stat"]])

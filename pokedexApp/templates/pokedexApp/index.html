@@ -10,34 +10,59 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   </head>
   <body>
-    <h1>Pokedex</h1>
-    <div>
-      <form action="{% url 'pokedexApp:index'%}" method="post">
-        {% csrf_token %}
-        {{pkc}}
-        <input type="submit">
-      </form>
-      {%if flag%}        
-        <span> No existe </span>
-      {% endif %}
-    </div>
-    <ul>
-      <li><span>{{ namePokemon }}</span></li>
-      <li><span>{{ idPokemon }}</span></li>
-      <li><span> {{ typesPokemon }} </span></li>
-      <li>
-        <span>Estadisticas</span>
-        <ul>
-          {% for i in statsPokemon %}
-          <li><span>{{ i }}</span></li>
-          {% endfor %}
-        </ul>
-      </li>
+    <div class="container podex-cont" style="width:1000px">
       
-      <li><span> {{ heightPokemon }} m </span></li>
-      <li><span> {{ weightPokemon }} kg </span></li>
-      <li><img src="{{imageUrlPokemon}}" title="Foto de {{ namePokemon }}" alt="No se pudo cargar imagen" height="250"/></li>
-    </ul>
-    
+      <div class="row p-3">
+        <span class="col poke-name">{{ namePokemon }}</span>
+        <span class="col col-1">{{ idPokemon }}</span>
+        <div class="search col">
+          <form action="{% url 'pokedexApp:index'%}" method="post">
+            {% csrf_token %}
+            {{pkc}}   
+            <input type="submit" class="btn btn-success" style="font-size:0.7rem;">         
+          </form>
+          {%if flag%}        
+            <div class="alert alert-danger" role="alert" style="position:absolute;">
+              No existe
+            </div>
+          {% endif %}
+        </div> 
+      </div>
+
+      <div class="row">
+
+        <div class="col-5">
+          <div class="row">
+            <img class="img-fluid rounded" src="{{imageUrlPokemon}}"/>
+          </div>
+          <div class="row pokeTypes">
+            <div class="card-group">            
+              {% for i in typesPokemon %}
+              <div class="card mx-3">
+                <p class="card-text">{{ i }}</p>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+        <div class="col">          
+          <div class="row">
+            <div class="col">
+              {% for i in statsPokemon %}
+              <span>{{ i }}</span>
+              {% endfor %}
+            </div>
+            <div class="col-2 buttons ">
+              <button type="button" class="btn btn-warning"><i class="fa-solid fa-shuffle"></i></i></button>
+              <button type="button" class="btn btn-warning"><i class="fa-solid fa-angle-left"></i></i></button>
+              <button type="button" class="btn btn-warning"><i class="fa-solid fa-angle-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </body>
 </html>
