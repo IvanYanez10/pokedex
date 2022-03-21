@@ -13,7 +13,7 @@
     <div class="container podex-cont" style="width:970px; border: 5px solid rgb(74, 2, 2);">
       <div class="row p-3">
         <span class="col poke-name">{{ namePokemon }}</span>
-        <span class="col col-1" style="font-size: 1.8rem;">{{ idPokemon }}</span>
+        <span class="col col-1 poke-id" style="font-size: 1.8rem;">{{ idPokemon }}</span>
         <div class="search col">
           <form action="{% url 'pokedexApp:index'%}" method="post">
             {% csrf_token %}
@@ -35,9 +35,9 @@
             <img class="img-fluid rounded" src="{{imageUrlPokemon}}"/>
           </div>
           <div class="row pokeTypes">
-            <div class="card-group">            
+            <div class="row">            
               {% for i in typesPokemon %}
-              <div class="card mx-3">
+              <div class="col card mx-3 {{ i.name }}">
                 <p class="card-text">{{ i.name }}</p>
               </div>
               {% endfor %}
