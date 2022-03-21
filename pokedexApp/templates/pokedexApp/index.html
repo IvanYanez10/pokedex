@@ -10,16 +10,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   </head>
   <body>
-    <div class="container podex-cont" style="width:1000px">
-      
+    <div class="container podex-cont" style="width:970px; border: 5px solid rgb(74, 2, 2);">
       <div class="row p-3">
         <span class="col poke-name">{{ namePokemon }}</span>
-        <span class="col col-1">{{ idPokemon }}</span>
+        <span class="col col-1" style="font-size: 1.8rem;">{{ idPokemon }}</span>
         <div class="search col">
           <form action="{% url 'pokedexApp:index'%}" method="post">
             {% csrf_token %}
             {{pkc}}   
-            <input type="submit" class="btn btn-success" style="font-size:0.7rem;">         
+            <input type="submit" class="btn btn-success" style="font-size:1rem;">         
           </form>
           {%if flag%}        
             <div class="alert alert-danger" role="alert" style="position:absolute;">

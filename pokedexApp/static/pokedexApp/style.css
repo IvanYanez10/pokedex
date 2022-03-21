@@ -9,17 +9,19 @@ ul{
 }
 
 .poke-name{
-    font-size: 1.6rem;
+    font-size: 1.8rem;
 }
 
 .podex-cont{
     margin: 20px auto;
-    background-color: #B63D41;
+    background-color: #b5171c;
+    padding: 10px;
 }
 
 input{
     background-color: lightgray;
     border-style: none;
+    font-size: 1rem;
     /*box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.75) inset;*/
 }
 
@@ -36,6 +38,7 @@ input{
 
 .pokeTypes{
     margin: 10px 0;
+    margin-top: 15px;
     padding: 0 20px;
     text-align: center;
     border-radius: 50px;
