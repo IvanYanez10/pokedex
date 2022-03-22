@@ -5,7 +5,7 @@ body{
     margin: 0;
     background: linear-gradient(-45deg, hsl(14, 82%, 63%), #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
-    animation: gradiente 15s ease infinite;
+    animation: gradiente 30s ease infinite;
 }
 
 @keyframes gradiente {
@@ -25,18 +25,19 @@ ul{
 }
 
 .poke-name, .poke-id{
-    color: #ffc107;
+    color: #fff;
     font-size: 1.8rem;
     font-weight: bolder;
     text-shadow: rgb(75, 75, 75) 1px 0 10px;
 }
 
 .podex-cont{
-    margin: 50px auto;
-    background-color: #ac0d12;
-    padding: 10px 30px;
+    margin: 50px auto;    
+    padding: 10px 40px;
     border-radius: 50px;
-    box-shadow: 0px 0px 10px 2px rgba(37, 37, 37, 0.75) inset;
+    box-shadow: 0px 0px 10px 2px rgba(246, 246, 246, 0.2);
+    background-color: #ffffff21;
+    backdrop-filter: blur(5px);
 }
 
 input{
@@ -50,9 +51,7 @@ input{
     width: 350px;
     margin-left: auto;
     margin-right: auto;
-    padding: 10px;
-    /*border: 5px solid rgb(204, 21, 21);*/
-    
+    padding: 10px;    
 }
 
 .pokeTypes{
@@ -81,17 +80,15 @@ input{
     border-radius: 30px 30px 30px 30px;
     border-style: none;
     height: 35px;
-    box-shadow: 0px 0px 7px 5px rgba(255, 255, 255, 0.5) inset;
+    box-shadow: 0px 0px 5px 3px rgba(255, 255, 255, 0.5) inset;
 }
 
-.particles-image{
-    mask-image: radial-gradient(ellipse, black 50%, rgba(0, 0, 0, 0.5));
-    
+.particles-image{ 
     height: 350;
     width: 350;
     position:relative; 
-    background-color: #9FFFE8;
-    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75) inset;
+    border-radius: 20px;
+    box-shadow: 0px 0px 2px 2px rgba(243, 243, 243, 0.3);
 }
 
 #particles-js{    
@@ -101,6 +98,27 @@ input{
     height: 95%;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+input{
+    justify-content: center;
+    align-items: center;
+    font-size:1rem;
+    height:25px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border:none;
+}
+
+.btn{
+    justify-content: center;
+    align-items: center;
+    font-size:1rem;
+    height:25px;
+    background-color: #91ffff;
+    border-radius: 7px;
+    border: none;
+    color: rgb(39, 39, 39);
 }
 
 .grass{

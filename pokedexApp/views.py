@@ -7,7 +7,7 @@ import requests
 class PokeChosen(forms.Form):
     varPokeChosen = forms.CharField(
         label='',
-        widget=forms.TextInput(attrs={'placeholder': 'Search'})) #Poke name or ID
+        widget=forms.TextInput()) #Poke name or ID attrs={'placeholder': 'Search'}
 
 def index(request):
     flag = False
