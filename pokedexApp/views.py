@@ -32,16 +32,19 @@ def index(request):
     heightPokemon = float(dataJson["height"]) / 10  
     weightPokemon = float(dataJson["weight"]) / 10
     imageUrlPokemon = dataJson["sprites"]["other"]["home"]["front_default"]
+    abilitiesPokemon = []
     typesPokemon = []
     statsPokemon = []
+
+    for i in dataJson["abilities"]:
+        abilitiesPokemon.append(i["ability"]["name"])
 
     for i in dataJson["types"]:
         typesPokemon.append({ "name":i["type"]["name"]})
     
     for i in dataJson["stats"]:
-        statsPokemon.append([i["stat"]["name"], i["base_stat"]])
+        statsPokemon.append(i["base_stat"])
     
-
     return render(request, 'pokedexApp/index.html', {
         "flag": flag,
         "dataJson": dataJson,
@@ -49,6 +52,7 @@ def index(request):
         "idPokemon": idPokemon,
         "typesPokemon": typesPokemon,
         "statsPokemon": statsPokemon,
+        "abilitiesPokemon": abilitiesPokemon,
         "heightPokemon": heightPokemon,
         "weightPokemon": weightPokemon,
         "imageUrlPokemon": imageUrlPokemon,
